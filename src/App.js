@@ -4,6 +4,7 @@ import Plot from 'react-plotly.js';
 class App extends React.Component {
   render() {
     return (
+      <div>
       <Plot
         data={[
           {
@@ -11,12 +12,13 @@ class App extends React.Component {
             y: [2, 6, 3],
             type: 'scatter',
             mode: 'lines+markers',
-            marker: {color: 'red'},
+            marker: {color: 'green'},
           },
-          {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
+          {type: 'bar', x: [1, 2, 3], y: [2, 5, 3], marker: {color: 'blue'}},
         ]}
-        layout={ {width: 320, height: 240, title: 'A Fancy Plot'} }
+        layout={ {width: 800, height: 800, title: 'Cool Graph'} }
       />
+      </div>
     );
   }
 }
