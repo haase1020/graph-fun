@@ -2,3 +2,8 @@
   text-align: center;
 }
 
+.plot-container {
+  justify-content: center;
+  margin-left: 10%;
+  max-width: 100%;
+}
