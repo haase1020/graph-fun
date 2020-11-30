@@ -2,6 +2,11 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 
 class PrendaGraph extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {data: [], layout: {}, frames: [], config: {}};
+  }
     render() {
       return (
         <Plot
@@ -12,20 +17,26 @@ class PrendaGraph extends React.Component {
               y: [196,203,203,468,545,556,573,586,586,584,1007,1069,1092,1112,1109,1098,1098,1946,2065,2164,2184,2208,2204,2198,2638,2710,2755,2790,2799,2793,2791,3073,3159,3183,3196,3211,3212,3169,3231,3385,3407,3452,3460,3438,3433,3590,3602,3626,3633,3643,3636,3628,3710,3715,3716,3713,3718,3710,3705,3748,3760,3769,3768,3771,3762,3760,3823,3837,3835,3826,3831,3818,3814,3871,3872,3880,3880,3883],
               type: 'scatter',
               mode: 'lines+markers',
-              marker: {"line":{"color":"#E5ECF6","width":0.5}},
+              marker: {color:'#ab63fa'},
+              name: 'Line',
+              // line: {color: 'blue'},
               showlegend: true,
-              displaylogo: false
-              
+              displaylogo: false,
+              displayModeBar: false
             },
-           
-            // {type: 'bar', x: [1, 2, 3], y: [2, 5, 3], marker: {color: 'blue'}},
-          ]}
+          ]
+        }
           layout={
              {width: 1400, height: 900,font: {size: 28},
-              title: "Students Enrolled"}}
-              config={{responsive: true}
-              
-            }
+             title: "Students Enrolled"}}
+              config={{responsive: true,
+                displayModeBar: false
+              }}
+            
+          style= {
+            {position: 'relative'}
+          }    
+            
         />
       );
     }

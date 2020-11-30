@@ -4,7 +4,7 @@ import Graph2 from './components/Graph2';
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { Drawer, List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core"
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Container } from "@material-ui/core"
 
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from '@material-ui/icons/Info';
@@ -56,8 +56,12 @@ function App () {
             </List>
           </Drawer>
           <Switch>
-            <Route exact path="/">Home</Route>
-            <Route exact path="/about">About</Route>
+            <Route exact path="/">
+              <PrendaGraph />
+            </Route>
+            <Route exact path="/about">
+              <Graph2 />
+              </Route>
           </Switch>
         </div>
       </Router>
