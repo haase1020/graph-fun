@@ -11,6 +11,8 @@ class Graph2 extends React.Component {
     }
   }
 
+  
+
   componentDidMount(){
     const url = 'http://localhost:5000/charts/enrollments'
     const headers = {
