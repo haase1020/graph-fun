@@ -1,11 +1,35 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
+import axios from 'axios';
 
 class Graph2 extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {data: [], layout: {}, frames: [], config: {}};
+  constructor(){
+    super()
+    this.state = {
+      data: []
+    }
+  }
+
+  componentDidMount(){
+    const url = 'http://localhost:5000/charts/enrollments'
+    const headers = {
+      headers: {
+        'Content-Type': 'application/json',
+       
+      }
+    }
+    axios.get(url, headers)
+    .then((x)=>{
+     
+      console.log(x.data)
+      // this.setState({
+      //   data: x.data.results
+      // })
+    })
+    .catch(()=>{
+      alert('Failed to get the data 😭')
+    })
   }
     render() {
       return (
